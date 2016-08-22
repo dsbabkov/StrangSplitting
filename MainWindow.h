@@ -1,5 +1,6 @@
 #pragma once
 
+#include "InputParameters.h"
 #include <QMainWindow>
 #include <memory>
 
@@ -16,6 +17,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    InputParameters inputParameters() const;
 
 private:
     Ui::MainWindow *ui;

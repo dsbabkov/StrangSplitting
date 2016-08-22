@@ -8,10 +8,12 @@ CONFIG += c++14
 
 SOURCES += main.cpp\
         MainWindow.cpp \
-    Solver.cpp
+    Solver.cpp \
+    InputParameters.cpp
 
 HEADERS  += MainWindow.h \
-    Solver.h
+    Solver.h \
+    InputParameters.h
 
 FORMS    += MainWindow.ui
 
