@@ -1,13 +1,14 @@
 #include "MainWindow.h"
 #include <QSettings>
+#include <QtDebug>
+#include <ResultsMemoryWriter.h>
 #include "Solver.h"
 #include "ui_MainWindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , vSolver(new Solver)
-    , wSolver(new Solver)
+    , resultsWriter_{new ResultsMemoryWriter()}
 {
     ui->setupUi(this);
     initConnections();
@@ -39,6 +40,7 @@ void MainWindow::initConnections()
     connect(ui->timeStepSizeSpn, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this, &MainWindow::computeTimeStepCount);
     connect(ui->endTimeSpn, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this, &MainWindow::computeTimeStepCount);
     connect(ui->solveBtn, &QAbstractButton::clicked, this, &MainWindow::saveSettings);
+    connect(ui->solveBtn, &QAbstractButton::clicked, this, &MainWindow::solve);
 }
 
 void MainWindow::loadSettings()
@@ -74,4 +76,14 @@ void MainWindow::saveSettings() const
 void MainWindow::computeTimeStepCount()
 {
     ui->timeStepCountLbl->setText(QString::number(inputParameters().timeStepCount()));
+}
+
+void MainWindow::solve()
+{
+    Solver solver(resultsWriter_);
+    solver.setInputParameters(inputParameters());
+
+    qDebug() << "Calculation started";
+    solver.solve();
+    qDebug() << "Calculation finished";
 }

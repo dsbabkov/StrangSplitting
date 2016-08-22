@@ -9,11 +9,15 @@ CONFIG += c++14
 SOURCES += main.cpp\
         MainWindow.cpp \
     Solver.cpp \
-    InputParameters.cpp
+    InputParameters.cpp \
+    IResultsWriter.cpp \
+    ResultsMemoryWriter.cpp
 
 HEADERS  += MainWindow.h \
     Solver.h \
-    InputParameters.h
+    InputParameters.h \
+    IResultsWriter.h \
+    ResultsMemoryWriter.h
 
 FORMS    += MainWindow.ui
 

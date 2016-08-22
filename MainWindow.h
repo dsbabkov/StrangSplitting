@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <memory>
 
-class Solver;
+class ResultsMemoryWriter;
 
 namespace Ui {
 class MainWindow;
@@ -27,11 +27,10 @@ private:
 private slots:
     void saveSettings() const;
     void computeTimeStepCount();
+    void solve();
 
 
 private:
     Ui::MainWindow *ui;
-
-    std::unique_ptr<Solver> vSolver;
-    std::unique_ptr<Solver> wSolver;
+    std::shared_ptr<ResultsMemoryWriter> resultsWriter_;
 };

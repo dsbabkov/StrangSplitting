@@ -1,7 +1,24 @@
 #pragma once
 
+#include <memory>
+#include "InputParameters.h"
+
+class IResultsWriter;
+
 class Solver
 {
 public:
-    Solver();
+    explicit Solver(std::shared_ptr<IResultsWriter> writer);
+
+    std::shared_ptr<IResultsWriter> writer() const;
+    void setWriter(const std::shared_ptr<IResultsWriter> &writer);
+
+    InputParameters inputParameters() const;
+    void setInputParameters(const InputParameters &inputParameters);
+
+    void solve();
+
+private:
+    std::shared_ptr<IResultsWriter> writer_;
+    InputParameters inputParameters_;
 };
