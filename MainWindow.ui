@@ -101,10 +101,18 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QSpinBox" name="widthFragmentCountSpn"/>
+        <widget class="QSpinBox" name="widthFragmentCountSpn">
+         <property name="minimum">
+          <number>2</number>
+         </property>
+        </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QSpinBox" name="heightFragmentCountSpn"/>
+        <widget class="QSpinBox" name="heightFragmentCountSpn">
+         <property name="minimum">
+          <number>2</number>
+         </property>
+        </widget>
        </item>
        <item row="6" column="1">
         <widget class="QLabel" name="timeStepCountLbl">
@@ -131,10 +139,30 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QDoubleSpinBox" name="widthSpn"/>
+        <widget class="QDoubleSpinBox" name="widthSpn">
+         <property name="minimum">
+          <double>0.010000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.010000000000000</double>
+         </property>
+         <property name="value">
+          <double>0.100000000000000</double>
+         </property>
+        </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QDoubleSpinBox" name="heightSpn"/>
+        <widget class="QDoubleSpinBox" name="heightSpn">
+         <property name="minimum">
+          <double>0.010000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.010000000000000</double>
+         </property>
+         <property name="value">
+          <double>0.100000000000000</double>
+         </property>
+        </widget>
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label">
@@ -217,6 +245,15 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>widthSpn</tabstop>
+  <tabstop>heightSpn</tabstop>
+  <tabstop>widthFragmentCountSpn</tabstop>
+  <tabstop>heightFragmentCountSpn</tabstop>
+  <tabstop>timeStepSizeSpn</tabstop>
+  <tabstop>endTimeSpn</tabstop>
+  <tabstop>solveBtn</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

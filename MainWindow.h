@@ -21,7 +21,14 @@ public:
     InputParameters inputParameters() const;
 
 private:
+    void initConnections();
+    void loadSettings();
+    void saveSettings() const;
+
+
+private:
     Ui::MainWindow *ui;
+
     std::unique_ptr<Solver> vSolver;
     std::unique_ptr<Solver> wSolver;
 };
