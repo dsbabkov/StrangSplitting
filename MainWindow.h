@@ -23,7 +23,10 @@ public:
 private:
     void initConnections();
     void loadSettings();
+
+private slots:
     void saveSettings() const;
+    void computeTimeStepCount();
 
 
 private:

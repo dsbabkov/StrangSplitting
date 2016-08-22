@@ -36,7 +36,9 @@ InputParameters MainWindow::inputParameters() const
 
 void MainWindow::initConnections()
 {
-
+    connect(ui->timeStepSizeSpn, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this, &MainWindow::computeTimeStepCount);
+    connect(ui->endTimeSpn, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this, &MainWindow::computeTimeStepCount);
+    connect(ui->solveBtn, &QAbstractButton::clicked, this, &MainWindow::saveSettings);
 }
 
 void MainWindow::loadSettings()
@@ -67,4 +69,9 @@ void MainWindow::saveSettings() const
     settings.setValue("WidthFragmentCount", ui->widthFragmentCountSpn->value());
     settings.setValue("TimeStepSize", ui->timeStepSizeSpn->value());
     settings.setValue("EndTime", ui->endTimeSpn->value());
+}
+
+void MainWindow::computeTimeStepCount()
+{
+    ui->timeStepCountLbl->setText(QString::number(inputParameters().timeStepCount()));
 }
