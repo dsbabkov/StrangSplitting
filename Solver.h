@@ -1,7 +1,8 @@
 #pragma once
 
-#include <memory>
 #include "InputParameters.h"
+#include <armadillo>
+#include <memory>
 
 class IResultsWriter;
 
@@ -17,6 +18,10 @@ public:
     void setInputParameters(const InputParameters &inputParameters);
 
     void solve();
+
+private:
+    arma::mat initialLayer() const;
+    void assignBoundaryConditions(arma::mat &results) const;
 
 private:
     std::shared_ptr<IResultsWriter> writer_;

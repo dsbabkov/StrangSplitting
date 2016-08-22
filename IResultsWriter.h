@@ -9,5 +9,5 @@ public:
     virtual ~IResultsWriter();
 
     virtual void writeInputParameters(const InputParameters &parameters) = 0;
-    virtual void writeResults(const arma::mat &matrix) = 0;
+    virtual void writeResults(double time, const arma::mat &matrix) = 0;
 };

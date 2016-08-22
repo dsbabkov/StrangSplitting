@@ -8,7 +8,7 @@ public:
     ResultsMemoryWriter();
 
     virtual void writeInputParameters(const InputParameters &parameters) override;
-    virtual void writeResults(const arma::mat &matrix) override;
+    virtual void writeResults(double time, const arma::mat &matrix) override;
 
 private:
     InputParameters inputParameters_;
