@@ -16,9 +16,12 @@ public:
     ~AlloyParameters();
 
     Alloy alloy() const;
+    void setAlloy(const Alloy &alloy);
 
 private:
     void setupConnections();
+    void loadSettings();
+    void saveSettings();
 
 private slots:
     void computeThermalDiffusivity();
