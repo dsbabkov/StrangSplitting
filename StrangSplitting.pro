@@ -12,16 +12,19 @@ SOURCES += main.cpp\
     InputParameters.cpp \
     IResultsWriter.cpp \
     ResultsMemoryWriter.cpp \
-    Alloy.cpp
+    Alloy.cpp \
+    AlloyParameters.cpp
 
 HEADERS  += MainWindow.h \
     Solver.h \
     InputParameters.h \
     IResultsWriter.h \
     ResultsMemoryWriter.h \
-    Alloy.h
+    Alloy.h \
+    AlloyParameters.h
 
-FORMS    += MainWindow.ui
+FORMS    += MainWindow.ui \
+    AlloyParameters.ui
 
 LIBS += -LC:\Development\armadillo\bin -larmadillo
 

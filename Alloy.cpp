@@ -1,14 +1,14 @@
 #include "Alloy.h"
 
 Alloy::Alloy()
-    : conductivity{}
-    , specificHeat{}
-    , density{}
+    : thermalConductivity{50}
+    , specificHeat{462}
+    , density{7800}
 {
 }
 
 Alloy::Alloy(double conductivity, double specificHeat, double density)
-    : conductivity(conductivity)
+    : thermalConductivity(conductivity)
     , specificHeat(specificHeat)
     , density(density)
 {
@@ -16,5 +16,5 @@ Alloy::Alloy(double conductivity, double specificHeat, double density)
 
 double Alloy::thermalDiffusivity() const
 {
-    return conductivity / (specificHeat * density);
+    return thermalConductivity / (specificHeat * density);
 }

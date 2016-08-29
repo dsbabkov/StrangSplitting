@@ -21,6 +21,30 @@
        <string>Входные параметры</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
+       <item row="5" column="2">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>с</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>с</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Фрагментов по высоте</string>
+         </property>
+         <property name="buddy">
+          <cstring>heightFragmentCountSpn</cstring>
+         </property>
+        </widget>
+       </item>
        <item row="4" column="1">
         <widget class="QDoubleSpinBox" name="timeStepSizeSpn">
          <property name="minimum">
@@ -33,19 +57,6 @@
           <double>1.000000000000000</double>
          </property>
         </widget>
-       </item>
-       <item row="0" column="3">
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_4">
@@ -188,29 +199,21 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Фрагментов по высоте</string>
+       <item row="0" column="4">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
-         <property name="buddy">
-          <cstring>heightFragmentCountSpn</cstring>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
          </property>
-        </widget>
+        </spacer>
        </item>
-       <item row="4" column="2">
-        <widget class="QLabel" name="label_12">
-         <property name="text">
-          <string>с</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QLabel" name="label_13">
-         <property name="text">
-          <string>с</string>
-         </property>
-        </widget>
+       <item row="0" column="3" rowspan="7">
+        <widget class="AlloyParameters" name="widget" native="true"/>
        </item>
       </layout>
      </widget>
@@ -245,6 +248,14 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>AlloyParameters</class>
+   <extends>QWidget</extends>
+   <header>AlloyParameters.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>widthSpn</tabstop>
   <tabstop>heightSpn</tabstop>
