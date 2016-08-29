@@ -11,13 +11,15 @@ SOURCES += main.cpp\
     Solver.cpp \
     InputParameters.cpp \
     IResultsWriter.cpp \
-    ResultsMemoryWriter.cpp
+    ResultsMemoryWriter.cpp \
+    Alloy.cpp
 
 HEADERS  += MainWindow.h \
     Solver.h \
     InputParameters.h \
     IResultsWriter.h \
-    ResultsMemoryWriter.h
+    ResultsMemoryWriter.h \
+    Alloy.h
 
 FORMS    += MainWindow.ui
 
